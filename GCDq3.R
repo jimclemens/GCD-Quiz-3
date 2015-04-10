@@ -19,4 +19,22 @@ agricultureLogical <- (!is.na(ds$ACR)) & (!is.na(ds$AGS)) & (ds$ACR == 3) & (ds$
 ## Apply the which command as specified
 which(agricultureLogical)
 
+## ------------------------------------------------------------------------------
+## Question 2
+## Using the jpeg package read in the following picture of your instructor into R 
+## https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg 
+## Use the parameter native=TRUE. What are the 30th and 80th quantiles of the 
+## resulting data?
+##
+## Read the file into pic
+require("jpeg")
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg", 
+             destfile = "./jeffpic.jpg", method = "curl", quiet = TRUE)
+pic <- readJPEG("./jeffpic.jpg", native = TRUE)
+quantile(pic, probs = c(.30, .80))
+
+## ------------------------------------------------------------------------------
+## Question 3
+
+
 
